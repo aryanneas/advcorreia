@@ -1,0 +1,87 @@
+.tick {
+  stroke-opacity: 0;
+  stroke-dasharray: 29px;
+  stroke-dashoffset: 29px;
+  animation: draw 0.5s cubic-bezier(0.25, 0.25, 0.25, 1) forwards;
+  animation-delay: 0.6s;
+}
+
+.circle {
+  fill-opacity: 0;
+  stroke: #219a00;
+  stroke-width: 16px;
+  transform-origin: center;
+  transform: scale(0);
+  animation: grow 1s cubic-bezier(0.25, 0.25, 0.25, 1.25) forwards;
+}
+
+.svg-container {
+  height: 100%;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-content: center;
+
+  margin: 19% 0 5%;
+}
+
+@keyframes grow {
+  60% {
+    transform: scale(0.8);
+    stroke-width: 4px;
+    fill-opacity: 0;
+  }
+  100% {
+    transform: scale(0.9);
+    stroke-width: 8px;
+    fill-opacity: 1;
+    fill: #219a00;
+  }
+}
+
+@keyframes draw {
+  0%,
+  100% {
+    stroke-opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+:root {
+  --theme-color: var(--color-purple);
+}
+
+body {
+  background-color: #d9d8e4;
+}
+
+h1 {
+  font-family: "Quicksand-Medium";
+  text-align: center;
+  color: #212121;
+}
+
+a {
+  background-color: #ba8716;
+  font-family: "Quicksand-Medium";
+  padding: 15px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: url("../css/fonts/Quicksand-Medium/Quicksand-Medium.eot");
+  src: url("../css/fonts/Quicksand-Medium/Quicksand-Medium?#iefix")
+      format("embedded-opentype"),
+    url("../css/fonts/Quicksand-Medium/Quicksand-Medium.woff") format("woff"),
+    url("../css/fonts/Quicksand-Medium/Quicksand-Medium.ttf") format("truetype"),
+    url("../css/fonts/Quicksand-Medium/Quicksand-Medium.svg") format("svg");
+}
