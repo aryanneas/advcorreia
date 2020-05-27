@@ -1,0 +1,624 @@
+/*HEADER*/
+nav {
+  background-color: #fff;
+  height: 125px;
+  position: relative;
+  top: -10px;
+}
+
+.logo {
+  float: left;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.logo a img {
+  width: 120px;
+}
+
+nav ul {
+  float: right;
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}
+
+nav ul li {
+  display: inline-block;
+  padding-top: 1rem;
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 48px;
+}
+
+nav ul li:last-child {
+  margin-right: 24px;
+}
+
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  font-family: "Quicksand-Medium";
+  color: #232f61;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  transition: 0.3s ease;
+  background: #fff;
+
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  padding: 10px 0;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: #438199;
+
+  border-top: 4px solid #438199;
+  border-bottom: 4px solid #438199;
+  padding: 6px 0;
+}
+
+/*HEADER RESPONSIVE*/
+@media screen and (max-width: 864px) {
+  nav {
+    position: none;
+    top: 0 !important;
+    height: 150px;
+  }
+  .logo {
+    float: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    background: #fff;
+    opacity: 0;
+  }
+
+  .nav-wrapper ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding-right: 2rem;
+  }
+
+  .nav-wrapper ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .nav-wrapper ul li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav-wrapper ul li a {
+    padding: 10px 24px;
+    opacity: 0;
+    color: #000;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn {
+    position: fixed;
+    right: 3rem;
+    display: block;
+    cursor: pointer;
+    z-index: 9998;
+  }
+
+  .nav-btn i {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background: #333;
+  }
+
+  .nav-btn i:nth-child(1) {
+    margin-top: 12px;
+  }
+
+  .nav-btn i:nth-child(2) {
+    margin-top: 7px;
+  }
+}
+
+#nav:checked + .nav-btn i {
+  background: #000;
+  transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+  transform: translateY(5px) rotate(-135deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+  transform: translateY(-6px) rotate(135deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  display: none;
+}
+
+/*ACCORDION*/
+#accordion {
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 2%;
+}
+
+.card-body {
+  background-color: #f7f7f7;
+}
+
+.card-header {
+  background-color: #ba8716 !important;
+  color: #fff !important;
+}
+.btn.btn-link {
+  font-family: "Quicksand-Medium";
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.btn.btn-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn.btn-link:focus {
+  text-decoration: none;
+}
+.o-content-arrow {
+  align-self: center;
+  justify-self: center;
+  text-align: end;
+}
+
+.o-arrow {
+  width: 30px;
+}
+
+/*BOX QUAL DOCUMENTO */
+.bg-index {
+  background-image: url("../imagens/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 12% 0;
+}
+
+.carousel-item.active::after {
+  content: "";
+  display: block;
+  /* background-image: linear-gradient(to right, #232f61, #438199); */
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+}
+
+.carousel-caption {
+  bottom: 43% !important;
+}
+
+.o-content-bg-index {
+  z-index: 1;
+  color: #fff;
+}
+
+.title-and-desc-bg-index {
+  font-family: "Quicksand-Medium";
+  padding-bottom: 5%;
+}
+
+/*BOX COMO FUNCIONA */
+.o-content-funciona {
+  padding: 10% 0;
+}
+
+.o-content-funciona h3 {
+  color: #5a5789;
+  font-family: "Quicksand-Medium";
+  font-size: 1.5em;
+}
+
+.o-content-funciona p {
+  color: #616161;
+  font-family: "Quicksand-Regular";
+}
+
+.o-title-funciona {
+  margin-bottom: 5%;
+  color: #5a5789;
+}
+.o-title-funciona h2 {
+  font-size: 2.5em !important;
+}
+
+/*BOX VEJA O QUE ESTÃO FALANDO*/
+.bg-veja {
+  padding: 5% 0;
+  background-color: #d9d8e4;
+}
+.o-content-veja h2 {
+  font-family: "Quicksand-Medium";
+  color: #212121;
+}
+
+.o-content-veja p {
+  font-family: "Quicksand-Regular";
+  color: #212121;
+  text-align: justify;
+}
+
+/*BOX O QUE PODEMOS FAZER*/
+.bg-podemos-fazer {
+  /* background-image: url("../imagens/grafismo_setores.png"); */
+  background-size: contain;
+  background-position: right 0 center;
+  padding: 0 10% 0;
+  background-repeat: no-repeat;
+  margin: 7% 0 3% 0;
+}
+
+.o-title-podemos {
+  color: #232f61;
+}
+.o-title-podemos h2 {
+  font-size: 2.125em !important;
+  font-family: "Quicksand-Medium";
+  text-align: center;
+}
+.o-title-lista {
+  font-family: "Quicksand-Medium";
+  color: #232f61;
+}
+.o-lista ul {
+  padding-left: 0;
+  font-family: "Quicksand-Regular";
+  text-align: left;
+  list-style: none;
+}
+.o-lista p {
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  font-family: "Quicksand-Regular";
+}
+
+.o-lista ul li {
+  padding-bottom: 15px;
+}
+.o-lista ul li::before {
+  content: "";
+  background-color: #b88430;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 10px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.o-logo-img {
+  margin-bottom: 7%;
+}
+
+/*FOOTER*/
+.o-title-footer {
+  font-size: 2.125em !important;
+  color: #fff;
+  font-family: "Quicksand-Medium" !important;
+}
+.bg-gradiente {
+  background-color: #232f61;
+}
+
+.o-wpp-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.o-phone-icon {
+  width: 27px;
+  height: 27px;
+}
+
+.o-email-icon {
+  width: 50px;
+  height: 31px;
+}
+
+.o-info-contato p {
+  margin-top: 1rem !important;
+}
+
+.o-info-contato a,
+.o-info-contato p {
+  color: #fff;
+}
+
+.o-info-contato a:hover {
+  color: #fff;
+}
+
+.form-contato label {
+  color: #fff;
+}
+
+.o-btn-form {
+  text-align: right;
+}
+
+.btn-primary {
+  background-color: #ba8716 !important;
+  border-color: #ba8716 !important;
+}
+.btn-primary:focus {
+  border-color: #ba8716 !important;
+
+  box-shadow: 0px 0px 5px 1px rgba(186, 135, 22, 1) !important;
+}
+
+/*wpp icon float*/
+.wpp-mobile {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  background-color: #29b191;
+  width: 100%;
+  color: #fff;
+  padding: 15px 0;
+  font-weight: bold;
+}
+.wpp-mobile:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wpp-mobile img {
+  position: fixed;
+  bottom: 0;
+  right: 3%;
+  z-index: 9999;
+}
+
+.wpp-desktop {
+  display: block;
+}
+.wpp-desktop img {
+  position: fixed;
+  bottom: 0;
+  right: 3%;
+  z-index: 9999;
+}
+
+.o-copy {
+  color: #fff;
+  font-family: "Quicksand-Regular";
+  font-weight: bold;
+  margin: 5% 3%;
+}
+
+/*RESPONSIVE*/
+@media only screen and (min-width: 760px) and (max-width: 1200px) {
+  .o-logo img {
+    width: 170px;
+    height: 170px;
+  }
+  .wpp-mobile {
+    display: none;
+  }
+
+  .wpp-desktop {
+    display: block;
+  }
+}
+
+.carousel-caption h1,
+.carousel-caption h2 {
+  font-family: "Quicksand-Regular";
+}
+
+i {
+  border: solid #ba8716;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+#defesasTrabalhistasTitle:hover,
+#realizacaoAudienciasTitle:hover {
+  cursor: pointer;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 500px) {
+  .carousel-item {
+    height: 300px !important;
+  }
+
+  .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px !important;
+  }
+  .carousel-caption {
+    bottom: 30% !important;
+  }
+  .carousel-caption.o-mob {
+    bottom: 10% !important;
+  }
+  .carousel-caption h1,
+  .carousel-caption h2 {
+    font-size: 1.2em;
+  }
+
+  .o-copy {
+    margin: 10% 0;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .nav-btn {
+    display: none;
+  }
+
+  .wpp-mobile {
+    display: block;
+  }
+  .wpp-desktop {
+    display: none;
+  }
+
+  .o-btn-form {
+    text-align: center;
+  }
+
+  .bg-index {
+    padding: 15% 0;
+  }
+
+  .o-title-footer {
+    font-size: 1.65em !important;
+    color: #fff;
+    font-family: "Quicksand-Medium" !important;
+    margin-bottom: 5%;
+    margin-top: -5%;
+  }
+
+  .bg-gradiente {
+    padding-bottom: 10%;
+  }
+
+  .o-info-contato {
+    padding-bottom: 5%;
+  }
+
+  .o-title-podemos h2 {
+    text-align: center;
+  }
+
+  .o-content-veja h2 {
+    padding: 5% 0;
+  }
+
+  .o-title-lista {
+    margin: 3% 0 2% 0;
+  }
+
+  .o-logo {
+    text-align: center;
+  }
+
+  .o-horario {
+    text-align: center;
+  }
+
+  .bg-podemos-fazer {
+    padding: 0;
+  }
+
+  .o-lista {
+    margin: 0;
+    padding-right: 0 !important;
+  }
+
+  .o-title-accordion {
+    font-size: 0.94em;
+    padding: 5px !important;
+  }
+
+  .card-header {
+    padding: 15px 0px !important;
+  }
+
+  .o-arrow {
+    width: 20px;
+  }
+}
+
+/*FONTS*/
+@font-face {
+  font-family: "Quicksand-Bold";
+  src: url("../css/fonts/Quicksand-Bold/Quicksand-Bold.eot"); /* IE9 Compat Modes */
+  src: url("../css/fonts/Quicksand-Bold/Quicksand-Bold?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../css/fonts/Quicksand-Bold/Quicksand-Bold.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../css/fonts/Quicksand-Bold/Quicksand-Bold.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../css/fonts/Quicksand-Bold/Quicksand-Bold.svg") format("svg"); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "Quicksand-Light";
+  src: url("../css/fonts/Quicksand-Light/Quicksand-Light.eot");
+  src: url("../css/fonts/Quicksand-Light/Quicksand-Light?#iefix")
+      format("embedded-opentype"),
+    url("../css/fonts/Quicksand-Light/Quicksand-Light.woff") format("woff"),
+    url("../css/fonts/Quicksand-Light/Quicksand-Light.ttf") format("truetype"),
+    url("../css/fonts/Quicksand-Light/Quicksand-Light.svg") format("svg");
+}
+
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: url("../css/fonts/Quicksand-Medium/Quicksand-Medium.eot");
+  src: url("../css/fonts/Quicksand-Medium/Quicksand-Medium?#iefix")
+      format("embedded-opentype"),
+    url("../css/fonts/Quicksand-Medium/Quicksand-Medium.woff") format("woff"),
+    url("../css/fonts/Quicksand-Medium/Quicksand-Medium.ttf") format("truetype"),
+    url("../css/fonts/Quicksand-Medium/Quicksand-Medium.svg") format("svg");
+}
+
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: url("../css/fonts/Quicksand-Regular/Quicksand-Regular.eot");
+  src: url("../css/fonts/Quicksand-Regular/Quicksand-Regular?#iefix")
+      format("embedded-opentype"),
+    url("../css/fonts/Quicksand-Regular/Quicksand-Regular.woff") format("woff"),
+    url("../css/fonts/Quicksand-Regular/Quicksand-Regular.ttf")
+      format("truetype"),
+    url("../css/fonts/Quicksand-Regular/Quicksand-Regular.svg") format("svg");
+}
